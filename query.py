@@ -1,6 +1,5 @@
 import pandas as pd
 import re
-import inflection
 
 def get_recs(text_input):
     text_input = str(text_input)
@@ -136,19 +135,19 @@ def get_recs(text_input):
         for ing in ingredients:
             sub = ing.split(' ')
             for ele in sub:
-                ingredient_list.append(inflection.singularize(ele))
+                ingredient_list.append(ele)
 
         if len(in_tag1) > 0:
             for ele in in_tag1:
                 check5 = ele not in ingredient_list
         else:
-            check5 = False
+            check5 = True
         
         if len(in_tag2) > 0:
             for ele in in_tag2:
                 check6 = ele not in ingredient_list
         else:
-            check6 = False
+            check6 = True
             
 
         if len(product_desc) > 0:
